@@ -1,0 +1,72 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a,b,x,y,,s,d;
+    float d1,d2,d3;
+    cin>>a>>b>>x>>y>>s>>d;
+    d1=sqrt((x-a)*(x-a)+(y-b)*(y-b));
+    d2=sqrt((s-x)*(s-x)+(d-y)*(d-y));
+    d3=sqrt((s-a)*(s-a)+(d-b)*(d-b));
+    
+    if(d1>=d2+d3 or d2>=d3+d1 or d3>=d2+d3 or d1<=0 or d2<=0 or d3<=0)
+    {
+        cout<<"nu pot forma un triunghi";
+    }
+    else
+    {
+        if(d1==d2==d3)
+        {
+            cout<<"Triunghiul este echilateral si aria si volumul sunt ";
+            cout<<d1*d1*sqrt(3)/4<<" "<<d1*3;
+        }
+        else if(d1==d2)    
+        {
+            if(d1*d1*2==d3*d3)
+            {
+                cout<<"Triunghiul este dreptunghic isoscel si aria si volumul sunt ";
+                cout<<d1*d2/2<<" "<<d1*2+d3;
+            }
+            else
+            {
+                cout<<"Triunghiul este isoscel si aria si volumul sunt ";
+                cout<<sqrt(d1*d1-d3*d3/4)*d3/2<<" "<<d1+d2+d3;
+            }
+        }
+        else if(d1==d3)
+        {
+            if(d1*d1*2==d2*d2)
+            {
+                cout<<"Triunghiul este dreptunghic isoscel si aria si volumul sunt ";
+                cout<<d1*d3/2<<" "<<d1*2+d2;
+            }
+            else
+            {
+                cout<<"Triunghiul este isoscel si aria si volumul sunt ";
+                cout<<sqrt(d1*d1-d2*d2/4)*d2/2<<" "<<d1+d2+d3;
+            }
+        }
+        else if(d2==d3)
+        {
+            if(d2*d2*2==d1*d3)
+            {
+                cout<<"Triunghiul este dreptunghic isoscel si aria si volumul sunt ";
+                cout<<d3*d2/2<<" "<<d2*2+d1;
+            }
+            else
+            {
+                cout<<"Triunghiul este isoscel si aria si volumul sunt ";
+                cout<<sqrt(d2*d2-d1*d1/4)*d1/2<<" "<<d1+d2+d3;
+            }
+        }
+        else if(d1*d3*2==d2*d2)
+        {
+            cout<<"Triunghiul este dreptunghic si aria si volumul sunt";
+        }
+    }
+    
+
+    return 0;
+}
