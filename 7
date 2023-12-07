@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a,b,x,y,d1,d2,d3;
+    cin>>a>>b>>x>>y>>s>>d;
+    d1=sqrt((x-a)*(x-a)+(y-b)*(y-b));
+    d2=sqrt((s-x)*(s-x)+(d-y)*(d-y));
+    d3=sqrt((s-a)*(s-a)+(d-b)*(d-b));
+    if(d1+d2==d3 or d2+d3==d1 or d1+d3==d2)
+    {
+        cout<<"Da";    
+    }
+    else
+    {
+        cout<<"Nu";
+    }
+    return 0;
+}
